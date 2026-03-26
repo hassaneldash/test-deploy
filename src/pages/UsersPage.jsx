@@ -18,7 +18,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
 
-const App = () => {
+const UsersPage = () => {
 	const [users, setUsers] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
@@ -29,7 +29,7 @@ const App = () => {
 				setLoading(true);
 				// We use query parameters to only fetch 6 users for the landing page
 				const response = await axios.get(
-					'https://api.escuelajs.co/api/v1/users?limit=6&offset=0',
+					'https://api.escuelajs.co/api/v1/users?limit=9&offset=0',
 				);
 				setUsers(response.data);
 			} catch (error) {
@@ -64,33 +64,8 @@ const App = () => {
 
 	return (
 		<div className='min-h-screen bg-background'>
-			{/* 1. Hero Section */}
-			<section className='bg-muted/30 py-20 px-6 border-b'>
-				<div className='max-w-5xl mx-auto text-center space-y-8'>
-					<Badge variant='secondary' className='px-3 py-1 text-sm mb-4'>
-						<Star className='w-4 h-4 mr-2 text-yellow-500' />
-						V2.0 is now live
-					</Badge>
-					<h1 className='text-5xl md:text-7xl font-extrabold tracking-tight text-primary'>
-						Meet the New Template.
-					</h1>
-					<p className='text-xl text-muted-foreground max-w-2xl mx-auto'>
-						Hello ITIans, This is a template for React v19.2 using Vite and JavaScript and
-						Shadcn and React Router v7 in Data Mode
-					</p>
-					<div className='flex justify-center gap-4 pt-4'>
-						<Button size='lg' className='h-12 px-8 text-lg'>
-							Get Started <ArrowRight className='ml-2 w-5 h-5' />
-						</Button>
-						<Button size='lg' variant='outline' className='h-12 px-8 text-lg'>
-							View Documentation
-						</Button>
-					</div>
-				</div>
-			</section>
-
 			{/* 2. Featured Users Section */}
-			<section className='py-20 px-6 max-w-7xl mx-auto'>
+			<section className='py-2 px-6 max-w-7xl mx-auto'>
 				<div className='flex items-center gap-3 mb-10'>
 					<Users className='w-8 h-8 text-primary' />
 					<h2 className='text-3xl font-bold tracking-tight'>Featured Members</h2>
@@ -161,4 +136,4 @@ const App = () => {
 	);
 };
 
-export default App;
+export default UsersPage;
