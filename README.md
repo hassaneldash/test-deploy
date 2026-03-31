@@ -227,5 +227,4 @@ This template utilizes the `gh-pages` package for seamless deployment.
     *(Note: This command runs `npm run build` implicitly, bundles your code into a `dist/` folder, and pushes that folder to a special `gh-pages` branch on your repository).*
 3.  Go to your GitHub Repository -> **Settings** -> **Pages**.
 4.  Ensure the **Source** is set to "Deploy from a branch" and the branch selected is `gh-pages`.
-5.  Wait a few minutes, and your site will be live at your `homepage` URL!
-```
+5.  Wait a few minutes, and your site will be live at your `https://YOUR_USERNAME.github.io/YOUR_REPO_NAME/` URL!
